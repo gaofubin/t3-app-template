@@ -10,4 +10,6 @@ The following is a project created through [T3 Stack](https://create.t3.gg/), co
 5. Other...
 
 # Dashboard Demo
-![Alt text](image.png)
+![light](light.png)
+
+![dark](dark.png)
