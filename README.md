@@ -13,7 +13,7 @@ This project is a management interface developed using the [T3 Stack](https://cr
   - Other Features...: Waiting for further updates
 
 ## Quick Start
-  1. Clone the repository: git clone [repository link](https://github.com/gaofubin/t3-app-template)
+  1. Clone the repository: git clone https://github.com/gaofubin/t3-app-template.git
   2. Install dependencies: npm install
   3. Start the project: npm run dev
 
