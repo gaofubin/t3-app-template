@@ -18,6 +18,8 @@ This project is a management interface developed using the [T3 Stack](https://cr
   3. Start the project: npm run dev
 
 ## Dashboard Demo
+> Demo Link: https://t3-app-template.vercel.app/
+
 ![light](light.png)
 
 ![dark](dark.png)
