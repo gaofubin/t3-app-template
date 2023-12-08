@@ -1,16 +1,23 @@
-# T3 App Template
+# [T3 App Template]: T3 Stack with shadcn-ui Admin Layout
 
-The following is a project created through [T3 Stack](https://create.t3.gg/), combined with the admin layout encapsulated by [shadcn-ui](https://ui.shadcn.com/)
+## Overview
+This project is a management interface developed using the [T3 Stack](https://create.t3.gg/), encapsulated with [shadcn-ui](https://ui.shadcn.com/)
+. It aims to provide a responsive, user-friendly, and feature-rich admin interface suitable for various devices and screen sizes.
 
-# Implemented:
-1. Theme switching
-2. Responsive sidebar
-3. Shrink the sidebar
-4. Sidebar secondary menu
-5. Mobile Sidebar
-6. Other...
+## Features
+  - Theme Switching: Allows users to switch the interface theme according to their preference or requirement.
+  - Responsive Sidebar: A flexible sidebar that adapts to different screen sizes and devices.
+  - Sidebar Shrinking: Users can expand or collapse the sidebar as needed to optimize screen space.
+  - Secondary Menu in Sidebar: For better organization and access, the sidebar includes multi-level menus.
+  - Mobile Sidebar: Specially designed for mobile devices to ensure smooth usage on smaller screens.
+  - Other Features...: Waiting for further updates
 
-# Dashboard Demo
+## Quick Start
+  1. Clone the repository: git clone [repository link](https://github.com/gaofubin/t3-app-template)
+  2. Install dependencies: npm install
+  3. Start the project: npm run dev
+
+## Dashboard Demo
 ![light](light.png)
 
 ![dark](dark.png)
