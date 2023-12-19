@@ -1,11 +1,11 @@
 import { Heading } from '@/components/common/heading'
 import { Separator } from '@/components/ui/separator'
 
-const Children2 = () => {
+const Children3 = () => {
     return (
         <div className='flex h-full flex-col space-y-4 p-4 pt-6 mdp-8'>
 
-            <Heading title='Children2' description='Manage Children2 for your business' />
+            <Heading title='Children3' description='Manage Children3 for your business' />
 
 
             <Separator />
@@ -17,4 +17,4 @@ const Children2 = () => {
     )
 }
 
-export default Children2
+export default Children3

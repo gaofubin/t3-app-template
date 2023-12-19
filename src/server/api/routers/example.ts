@@ -1,25 +1,24 @@
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+
+import { exampleList } from "@/lib/validators";
 import { z } from "zod";
-
-import {
-  createTRPCRouter,
-  publicProcedure,
-  protectedProcedure,
-} from "@/server/api/trpc";
-
 export const exampleRouter = createTRPCRouter({
-  hello: publicProcedure
-    .input(z.object({ text: z.string() }))
-    .query(({ input }) => {
-      return {
-        greeting: `Hello ${input.text}`,
-      };
-    }),
-
-  getAll: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.example.findMany();
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    const examples = await ctx.prisma.example.findMany();
+    return exampleList.parse(examples);
   }),
 
-  getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
+  search: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {
+    const results = await ctx.prisma.example.findMany({
+      where: {
+        name: {
+          contains: input,
+        },
+      },
+      select: {
+        name: true,
+      },
+    });
+    return results;
   }),
 });

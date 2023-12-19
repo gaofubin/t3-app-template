@@ -1,30 +1,14 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { NavItems } from "@/components/constants/side-nav";
+import React from 'react'
 
-export const Heading = () => {
-    const router = useRouter();
-
-    const getTitle = () => {
-        let title = "";
-        NavItems.forEach((item) => {
-            if (item.href === router.pathname) {
-                title = item.title;
-            } else if (item.isChidren) {
-                const childItem = item.children?.find(
-                    (child) => child.href === router.pathname
-                );
-                if (childItem) {
-                    title = childItem.title;
-                }
-            }
-        });
-        return title;
-    };
-
+interface HeadingProps {
+    title: string
+    description: string
+}
+export const Heading = ({ title, description }: HeadingProps) => {
     return (
-        <div className="mb-4 rounded border px-4 py-3 text-xl font-semibold shadow">
-            {getTitle()}
+        <div>
+            <h2 className='text-3xl font-bold tracking-tight'>{title}</h2>
+            <p className='text-sm text-muted-foreground'>{description}</p>
         </div>
-    );
-};
+    )
+}

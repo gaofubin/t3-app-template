@@ -41,4 +41,31 @@ export const NavItems: NavItem[] = [
             },
         ],
     },
+    {
+        title: "Settings",
+        icon: ListTodo,
+        href: "/settings",
+        color: "text-orange-500",
+        isChidren: true,
+        children: [
+            {
+                title: "children1",
+                icon: ListTodo,
+                color: "text-pink-500",
+                href: "/settings/children1",
+            },
+            {
+                title: "children2",
+                icon: ListTodo,
+                color: "text-pink-500",
+                href: "/settings/children2",
+            },
+            {
+                title: "children3",
+                icon: ListTodo,
+                color: "text-pink-500",
+                href: "/settings/children3",
+            },
+        ],
+    },
 ];

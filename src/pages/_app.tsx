@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { Layout } from "@/components/layout";
 
 import "@/styles/globals.css";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -15,8 +16,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+
         <Layout>
-          <Component {...pageProps} />
+          <ModalProvider>
+            <Component {...pageProps} />
+          </ModalProvider>
         </Layout>
       </ThemeProvider>
     </SessionProvider>
