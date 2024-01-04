@@ -73,32 +73,34 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
                                     <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
                                 )}
                             </AccordionTrigger>
-                            <AccordionContent className="ml-4 mt-2 space-y-4 pb-1">
+                           <AccordionContent className="ml-4 mt-2 space-y-4 pb-1">
                                 {item.children?.map((child) => (
                                     <Link
-                                        key={child.title}
-                                        href={child.href}
-                                        onClick={() => {
-                                            if (setOpen) setOpen(false);
-                                        }}
+                                    key={child.title}
+                                    href={child.href}
+                                    onClick={() => {
+                                        if (setOpen) setOpen(false)
+                                    }}
+                                    className={cn(
+                                        buttonVariants({ variant: 'ghost' }),
+                                        'group flex h-12 justify-start gap-x-3',
+                                        path === child.href && 'bg-muted font-bold hover:bg-muted',
+                                    )}
+                                    >
+                                    {/* Use child.icon aqui em vez de item.icon */}
+                                    <child.icon className={cn('h-5 w-5', child.color)} />
+                                    <div
                                         className={cn(
-                                            buttonVariants({ variant: "ghost" }),
-                                            "group flex h-12 justify-start gap-x-3",
-                                            path === child.href && "bg-muted font-bold hover:bg-muted"
+                                        'text-base duration-200',
+                                        !isOpen && className,
                                         )}
                                     >
-                                        <item.icon className={cn("h-5 w-5", child.color)} />
-                                        <div
-                                            className={cn(
-                                                "text-base duration-200",
-                                                !isOpen && className
-                                            )}
-                                        >
-                                            {child.title}
-                                        </div>
+                                        {child.title}
+                                    </div>
                                     </Link>
                                 ))}
-                            </AccordionContent>
+                                </AccordionContent>
+
                         </AccordionItem>
                     </Accordion>
                 ) : (
