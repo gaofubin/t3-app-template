@@ -8,6 +8,7 @@ import { Layout } from "@/components/layout";
 
 import "@/styles/globals.css";
 import { ModalProvider } from "@/providers/modal-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -21,6 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <ModalProvider>
             <Component {...pageProps} />
           </ModalProvider>
+          <Toaster />
         </Layout>
       </ThemeProvider>
     </SessionProvider>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { signOut } from "next-auth/react";
 import type { User } from "next-auth";
 import {
@@ -12,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import { UserAvatar } from "@/components/layout/user-avatar";
 
 type Props = {
     user: Pick<User, "name" | "image" | "email">;
@@ -20,13 +20,14 @@ type Props = {
 export function UserNav({ user }: Props) {
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="relative rounded">
-                    <span className="text-lg">{user.name}</span>
-                </Button>
+            <DropdownMenuTrigger>
+                <UserAvatar
+                    user={{ name: user.name || null, image: user.image || null }}
+                    className="h-8 w-8 cursor-pointer"
+                />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <div className="flex items-center justify-start gap-2 p-2">
+                <div className="flex items-center justify-start gap-4 p-2">
                     <div className="flex flex-col space-y-1 leading-none">
                         {user.name && <p className="font-medium">{user.name}</p>}
                         {user.email && (
@@ -36,10 +37,6 @@ export function UserNav({ user }: Props) {
                         )}
                     </div>
                 </div>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                    <Link href="/profile">Profile</Link>
-                </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                     <Button

@@ -17,8 +17,7 @@ export type ExampleListOutput = z.infer<typeof exampleList>;
 export const user = z.object({
     id: z.string(),
     name: z.string(),
-    email: z.string(),
-    role: z.object({ name: z.string() }).optional(),
+    image: z.string()
 });
 
 export const userList = z.array(user);

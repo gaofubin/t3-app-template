@@ -17,15 +17,20 @@ import {
 
 import { toast } from "@/components/ui/use-toast";
 import { ComboboxDemo } from "./combobox";
-import { api } from "@/utils/api";
-import { type Example } from "@/lib/validators";
+
+const examples = z.object({
+    name: z.string()
+})
+
+type Example = z.infer<typeof examples>
 
 export const FormSchema = z.object({
     name: z.string(),
 });
 
 export function ComboboxForm() {
-    const { data: examples } = api.example.getAll.useQuery();
+    // const { data: examples } = api.example.getAll.useQuery(); 
+    const examples = [{ name: "anana" }, { name: "balala" }, { name: "clacla" }]
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     });
@@ -58,8 +63,8 @@ export function ComboboxForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit" size="sm">Submit</Button>
             </form>
-        </Form>
+        </Form >
     );
 }

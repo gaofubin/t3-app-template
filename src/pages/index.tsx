@@ -16,16 +16,14 @@ import { RecentSales } from "@/components/dashboard/recent-sales";
 
 const Home = () => {
   return (
-    <div className="flex h-full flex-col p-4">
-
-
-      <div className="flex-1 rounded border p-4 shadow">
+    <div className="flex h-full flex-col">
+      <div className="flex-1 rounded  p-4">
         <div className="flex-1 space-y-4 p-8 pt-6">
           <div className="flex items-center justify-between space-y-2">
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
             <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
-              <Button>Download</Button>
+              <Button size="sm">Download</Button>
             </div>
           </div>
           <Tabs defaultValue="overview" className="space-y-4">

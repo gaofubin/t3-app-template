@@ -29,9 +29,7 @@ export default function Header() {
                     {sessionData?.user ? (
                         <UserNav user={sessionData.user} />
                     ) : (
-                        <Button
-                            variant="default"
-                            className="text-sm"
+                        <Button size="sm"
                             onClick={() => {
                                 void signIn();
                             }}

@@ -10,6 +10,9 @@ This project is a management interface developed using the [T3 Stack](https://cr
   - Sidebar Shrinking: Users can expand or collapse the sidebar as needed to optimize screen space.
   - Secondary Menu in Sidebar: For better organization and access, the sidebar includes multi-level menus.
   - Mobile Sidebar: Specially designed for mobile devices to ensure smooth usage on smaller screens.
+  - Tanstack Table: Used tanstack table and implemented global search
+  - NextAuth: Implemented Github login using NextAuth
+  - Global: Header, Loading and Modal
   - Other Features...: Waiting for further updates
 
 ## Quick Start
