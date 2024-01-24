@@ -30,6 +30,9 @@ This project is a management interface developed using the [T3 Stack](https://cr
 > Demo Link: https://t3-app-template.vercel.app/
 
 ![Alt text](demo/light.png)
+
 ![Alt text](demo/dark.png)
+
 ![Alt text](demo/example-01-light.png)
+
 ![Alt text](demo/example-01-dark.png)
