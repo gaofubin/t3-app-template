@@ -9,7 +9,11 @@ import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const employeeRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
-    const employee = await ctx.prisma.employee.findMany();
+    const employee = await ctx.prisma.employee.findMany({
+      orderBy: {
+        createAt: "desc",
+      },
+    });
 
     const formattedEmployee: EmployeeColumn[] = employee.map((item) => ({
       id: item.id,
