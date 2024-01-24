@@ -14,7 +14,7 @@ interface SidebarProps {
 
 export default function Sidebar({ className }: SidebarProps) {
     const { isOpen, toggle } = useSidebar();
-    const [swith, setSwitch] = useState(false);
+    const [switch, setSwitch] = useState(false);
 
     const handleToggle = () => {
         setSwitch(true);
@@ -25,7 +25,7 @@ export default function Sidebar({ className }: SidebarProps) {
         <nav
             className={cn(
                 `relative hidden h-screen border-r pt-16 md:block`,
-                swith && "duration-500",
+                switch && "duration-500",
                 isOpen ? "w-72" : "w-[78px]",
                 className
             )}
