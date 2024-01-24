@@ -5,10 +5,9 @@ import { SessionProvider } from "next-auth/react";
 import { api } from "@/utils/api";
 import { ThemeProvider } from "next-themes";
 import { Layout } from "@/components/layout";
+import { Toaster } from "react-hot-toast";
 
 import "@/styles/globals.css";
-import { ModalProvider } from "@/providers/modal-provider";
-import { Toaster } from "@/components/ui/toaster";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -17,11 +16,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-
         <Layout>
-          <ModalProvider>
-            <Component {...pageProps} />
-          </ModalProvider>
+          <Component {...pageProps} />
           <Toaster />
         </Layout>
       </ThemeProvider>

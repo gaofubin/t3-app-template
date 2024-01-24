@@ -1,46 +1,28 @@
 import { z } from "zod";
 
 // Example
-export const example = z.object({
-    id: z.number(),
-    name: z.string(),
-    createdAt: z.date(),
-    updatedAt: z.date(),
+export const employeeFormSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  gender: z.string().min(1),
 });
 
-export const exampleList = z.array(example);
+export type EmployeeFromValues = z.infer<typeof employeeFormSchema>;
 
-export type Example = z.infer<typeof example>;
-export type ExampleListOutput = z.infer<typeof exampleList>;
-
-// User
-export const user = z.object({
-    id: z.string(),
-    name: z.string(),
-    image: z.string()
+export const employeeColumn = z.object({
+  id: z.string(),
+  firstName: z.string(),
+  lastName: z.string(),
+  gender: z.string(),
+  createAt: z.string(),
+  updateAt: z.string(),
 });
 
-export const userList = z.array(user);
+export type EmployeeColumn = z.infer<typeof employeeColumn>;
 
-export type User = z.infer<typeof user>;
-export type UserListOutput = z.infer<typeof userList>;
-
-// Role
-
-export const role = z.object({
-    id: z.string(),
-    name: z.string(),
-    description: z.string().optional(),
+export const updateEmployeeFormSchema = z.object({
+  id: z.string(),
+  firstName: z.string(),
+  lastName: z.string(),
+  gender: z.string(),
 });
-
-export const roleList = z.array(role);
-
-export type Role = z.infer<typeof role>;
-export type RoleListOutput = z.infer<typeof roleList>;
-
-export const createRoleSchema = z.object({
-    name: z.string(),
-    description: z.string(),
-});
-
-export type CreateRoleSchemaType = z.infer<typeof createRoleSchema>;

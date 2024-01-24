@@ -65,3 +65,13 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+
+model Employee {
+    id            String    @id @default(cuid())
+    firstName    String @map("first_name")
+    lastName     String @map("last_name")
+    gender       String
+    createAt DateTime @default(now()) @map("create_at")
+    updateAt DateTime @default(now()) @updatedAt @map("update_at")
+}
