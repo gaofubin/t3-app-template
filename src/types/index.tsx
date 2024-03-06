@@ -5,6 +5,6 @@ export interface NavItem {
     href: string;
     icon: LucideIcon;
     color?: string;
-    isChidren?: boolean;
+    isChildren?: boolean;
     children?: NavItem[];
 }
