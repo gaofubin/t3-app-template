@@ -41,7 +41,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
     return (
         <nav className="space-y-2">
       {items.map((item) =>
-        item.isChidren ? (
+        item.isChildren ? (
           <Accordion
             type="single"
             collapsible
