@@ -19,7 +19,7 @@ export const EmployeeClient = ({ data }: EmployeeClientProps) => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title="Employee"
+          title="Employee (CRUD)"
           description="Manage employee for you business"
         />
         <Button

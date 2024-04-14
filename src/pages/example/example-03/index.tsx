@@ -9,7 +9,10 @@ const Example03 = () => {
     <div className="flex flex-col">
       <div className="flex-1 space-y-4 p-4 md:p-8">
         <div className="flex items-center justify-between">
-          <Heading title="Example02" description="This is a example" />
+          <Heading
+            title="Form Context"
+            description="This is a form context example"
+          />
         </div>
         <Separator />
         <div className="mx-auto w-full max-w-2xl rounded-md border bg-background p-8">

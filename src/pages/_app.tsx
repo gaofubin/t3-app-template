@@ -6,6 +6,7 @@ import { api } from "@/utils/api";
 import { ThemeProvider } from "next-themes";
 import { Layout } from "@/components/layout";
 import { Toaster } from "react-hot-toast";
+import { Toaster as ShadcnToaster } from "@/components/ui/toaster";
 
 import "@/styles/globals.css";
 
@@ -19,6 +20,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <Layout>
           <Component {...pageProps} />
           <Toaster />
+          <ShadcnToaster />
         </Layout>
       </ThemeProvider>
     </SessionProvider>
