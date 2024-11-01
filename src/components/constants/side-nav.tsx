@@ -13,7 +13,7 @@ export const NavItems: NavItem[] = [
     icon: BookOpenCheck,
     href: "/example",
     color: "text-orange-500",
-    isChidren: true,
+    isChildren: true,
     children: [
       {
         title: "Example-01",
